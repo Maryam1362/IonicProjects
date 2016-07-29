@@ -36,7 +36,12 @@ If you are buliding an Android Apps you will need an Andriod SDK...Build Tools a
  6. lunch the app, by running the following command in the project folder:
  ionic emulate ios
 
- ..... the app will be run in the ios simulator,,,, which is xcode... if you have your phone connected to your laptop the app will be run in your phone.
+ ..... the app will be run in the ios simulator,,,, which is xcode... 
+ if you have your phone connected to your laptop you can  run the app by running:
+
+ ionic run ios
+
+ and the app will be run in your phone.
 
  Note: you can run steps 4 to 6 for andriod platform and change the ios to android 
 
