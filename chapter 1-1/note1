@@ -1,0 +1,47 @@
+Ionic will provide the look for your mobile app. so that your app will look like a native app.
+
+
+Inoic is a Front-end SDK for mobile applications
+
+
+Inoic Services: View, Creator, Push,.....
+
+Inoic Push is for push notifications 
+
+
+Inoic is built on top of the Angularjs
+
+Cordova will give us the WebView 
+
+Cordova provides plugins to access native APIs: Console, Camera,geolocation
+
+If you are buliding an Android Apps you will need an Andriod SDK...Build Tools and Emulator
+
+
+1. Ionic start {projectname} {template name}
+
+2. run the project in the development mode and in your local server.... navigate to the project folder.... run the fooling command:
+ ionic server 
+
+ 3. stop the server by running the following command:
+ quit
+
+ 4. add support to your Ios platform, run the following command, inside the project folder:
+ ionic platform add ios
+
+ 5. create your build for ios, by running the following command inside the project folder:
+
+ ionic build ios
+
+ 6. lunch the app, by running the following command in the project folder:
+ ionic emulate ios
+
+ ..... the app will be run in the ios simulator,,,, which is xcode... if you have your phone connected to your laptop the app will be run in your phone.
+
+ Note: you can run steps 4 to 6 for andriod platform and change the ios to android 
+
+
+
+
+
+
