@@ -4,7 +4,18 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 (function(){
-var app = angular.module('my-reddit', ['ionic'])
+var app = angular.module('my-reddit', ['ionic']);
+app.controller('RedditCtrl',function($http, $scope){
+
+ $scope.Stories=[];
+ $http.get('https://www.reddit.com/r/Android/new/.json')
+ .success(function(response){
+  angular.forEach(response.data.children, function(child){
+     $scope.Stories.push(child.data);
+  });
+ });
+
+});
 
 app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
