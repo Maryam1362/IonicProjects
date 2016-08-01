@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 (function(){
-var app = angular.module('my-reddit', ['ionic']);
+var app = angular.module('my-reddit', ['ionic', 'angularMoment']);
 app.controller('RedditCtrl',function($http, $scope){
 
  $scope.Stories=[];

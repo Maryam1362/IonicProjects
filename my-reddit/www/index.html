@@ -14,6 +14,8 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -24,13 +26,18 @@
   <body ng-app="my-reddit" ng-controller="RedditCtrl">
 
     <ion-pane>
-      <ion-header-bar class="bar-stable">
+      <ion-header-bar class="bar-calm">
         <h1 class="title">My Reddit</h1>
       </ion-header-bar>
       <ion-content>
-        <div ng-repeat="Story in Stories">
-          <a href="{{stiry.url}}" target="_blank">{{Story.title}}</a> -{{Story.domain}}
-        </div>
+      <div class="list">
+        <a target="_blank" ng-repeat="Story in Stories" class="item item-avatar-left" href="{{Story.url}}">
+          <img ng-src="{{Story.thumbnail}}" ng-if="Story.thumbnail.startsWith('http')">
+           <h2 class="story-title">{{Story.title}}</h2>
+           <p><span am-time-ago="Story.created_utc" am-preprocess="unix"></span>
+          - {{Story.domain}}</p>
+        </a>
+      </div>
       </ion-content>
     </ion-pane>
   </body>
