@@ -8,13 +8,21 @@ var app = angular.module('my-reddit', ['ionic', 'angularMoment']);
 app.controller('RedditCtrl',function($http, $scope){
 
  $scope.Stories=[];
- $http.get('https://www.reddit.com/r/Android/new/.json')
+ 
+ $scope.loadOlderstories = function(){
+  var params={};
+  if($scope.Stories.length > 0){
+    params['after']= $scope.Stories[$scope.Stories.length - 1].name;
+  }
+  $http.get('https://www.reddit.com/r/Android/new/.json',{params:params})
  .success(function(response){
   angular.forEach(response.data.children, function(child){
      $scope.Stories.push(child.data);
   });
+   $scope.$broadcast('scroll.infiniteScrollComplete');
  });
 
+ };
 });
 
 app.run(function($ionicPlatform) {

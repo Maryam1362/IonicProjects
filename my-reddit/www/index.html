@@ -31,13 +31,16 @@
       </ion-header-bar>
       <ion-content>
       <div class="list">
-        <a target="_blank" ng-repeat="Story in Stories" class="item item-avatar-left" href="{{Story.url}}">
+        <a target="_blank" ng-repeat="Story in Stories track by Story.id" class="item item-avatar-left" href="{{Story.url}}">
           <img ng-src="{{Story.thumbnail}}" ng-if="Story.thumbnail.startsWith('http')">
            <h2 class="story-title">{{Story.title}}</h2>
            <p><span am-time-ago="Story.created_utc" am-preprocess="unix"></span>
           - {{Story.domain}}</p>
         </a>
       </div>
+       <ion-infinite-scroll on-infinite="loadOlderstories"
+    distance="1%">
+  </ion-infinite-scroll>
       </ion-content>
     </ion-pane>
   </body>
